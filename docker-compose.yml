@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  arch:
+    image: archlinux:latest # Usa a imagem oficial do Arch Linux
+    container_name: arch-script-tester
+    volumes:
+      - ./scripts:/scripts # Mapeia a pasta local "scripts" para o diretório "/scripts" no container
+    working_dir: /scripts # Define o diretório de trabalho para onde os scripts serão executados
+    stdin_open: true
+    tty: true
+    command: /bin/bash # Comando para rodar o shell interativo (pode ser alterado se necessário)
+
